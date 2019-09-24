@@ -1,8 +1,10 @@
 Bank::Application.routes.draw do
+  get "admin/index"
+
+  get "welcome/index"
+  root :to => 'welcome#index'
+
   resources :posts
-  resources :users
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

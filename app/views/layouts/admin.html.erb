@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin |Welcome| </title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark indigo fixed-top scrolling-navbar" style="height: 80px">
+      <a class="navbar-brand white-text" style="font-size: 22px">Welcome Admin!!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item active ml-4">
+            <a class="nav-link" href="#" style="font-size: 18px">|Home|</a>
+          </li>
+          <li class="nav-item ml-4">
+            <a class="nav-link" href="#" style="font-size: 18px">|Create Account|</a>
+          </li>
+          <li class="nav-item ml-4">
+            <a class="nav-link" href="#" style="font-size: 18px">|View Users|</a>
+          </li>
+        </ul>
+        <button class="ml-auto btn btn-outline-white btn-lg my-0" >Sign Out</button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="" style="margin-top: 80px">
+    <%= yield %>
+  </div>
+
+  <footer>
+
+  </footer>
+</body>
+</html>

@@ -8,6 +8,10 @@ gem 'rails', '3.2.22.5'
 gem 'rake', '< 11.0'
 gem 'mysql'
 gem 'rspec-rails', '2.11.0'
+gem 'test-unit'
+
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +26,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+# mdb
+gem 'font-awesome-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
