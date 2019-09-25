@@ -19,13 +19,23 @@ class AdminController < ApplicationController
     respond_to do |format|
 
       if @account.save
-        format.html { redirect_to '/admin/index', notice: 'Account was successfully created.' }
+        @details = @account
+        puts "details : " + @details.account_number.to_s
+        flash[:account_number] = @account.account_number
+        flash[:balance] = @account.balance
+        format.html { redirect_to "/admin/show", notice: 'Account was successfully created.'  }
         format.json { render json: @account, status: :created, location: @account }
       else
         format.html { render action: "new" }
         format.json { render json: @account.errors, status: :unprocessable_entity }
       end
 
+    end
+  end
+
+  def show
+    respond_to do |format|
+      format.html # show.html.erb
     end
   end
 

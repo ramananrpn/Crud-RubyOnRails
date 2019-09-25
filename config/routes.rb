@@ -1,11 +1,10 @@
 Bank::Application.routes.draw do
   resources :transactions
 
-
   post "admin/create"
 
   get "admin/new"
-
+  get "admin/show"
   get "admin/index"
 
   get "welcome/index"
