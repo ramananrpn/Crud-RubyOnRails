@@ -1,1 +1,8 @@
-<%= render "body" %>
+<div class="container text-center mt-2">
+    <h3 id="notice"><%= notice %> </h3>
+    <h4> <%= "#{flash[:account_number]}"%> </h4>
+    <h3> <%= "#{flash[:balance]}"%></h3>
+</div>
+<div style="margin-top: -50px">
+  <%= render "body" %>
+</div>

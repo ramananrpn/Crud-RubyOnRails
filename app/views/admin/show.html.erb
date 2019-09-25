@@ -1,8 +1,10 @@
 <div class="container d-flex justify-content-center">
   <h3 id="notice"><%= notice %></h3>
   <br>
-  <h4>Account Number : <%= "#{flash[:account_number]}"%></h4><br>
-  <h3>Balance :  <%= "#{flash[:balance]}"%></h3>
+<!--  <h4>Account Number : <%#= "#{flash[:account_number]}"%></h4><br>-->
+<!--  <h3>Balance :  <%#= "#{flash[:balance]}"%></h3>-->
+  <h4>Account Number : <%= @account.account_number %></h4><br>
+  <h3>Balance :  <%= @account.balance%></h3>
 </div>
 <div style="margin-top: -100px">
   <%= render "body" %>
