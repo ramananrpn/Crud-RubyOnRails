@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20190924083741) do
+ActiveRecord::Schema.define(:version => 20190924094817) do
 
-  create_table "accounts", :primary_key => "account_number", :force => true do |t|
+  create_table "accounts", :force => true do |t|
+    t.string   "account_number"
     t.string   "name"
     t.string   "account_type"
     t.string   "password"
     t.integer  "balance"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -28,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20190924083741) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.string   "account_number"
+    t.string   "transaction_type"
+    t.integer  "amount"
+    t.integer  "balance"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|

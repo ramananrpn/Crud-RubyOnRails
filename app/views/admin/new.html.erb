@@ -1,0 +1,31 @@
+<div class="container" style="width: 600px ">
+  <form class="text-center border border-light p-5" action="/admin/create" method="post" style="margin-top: 200px">
+
+    <p class="h4 mb-4">Create New Customer</p>
+
+
+    <input type="text" id="name" class="form-control" name="account[name]" placeholder="Customer Name">
+    <br>
+    <!-- Account Type -->
+    <label>Account Type</label>
+
+    <select class="browser-default custom-select mb-4" name="account[account_type]">
+      <option value="" disabled selected style="  color: #9e9e9e">Choose account type</option>
+      <option value="1" >Savings</option>
+      <option value="2">Current</option>
+      <option value="3">Fixed Deposit</option>
+      <option value="4">Recurring Deposit</option>
+    </select>
+
+    <br>
+    <!-- Password -->
+    <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="account[password]" aria-describedby="password">
+
+    <input type="password" id="confirmPassword" class="form-control mb-4" placeholder="Confirm Password" name="account[password_confirmation]" aria-describedby="confirmPassword">
+
+    <!--  Create button -->
+    <button class="btn btn-info my-4 btn-block" type="submit"> Create </button>
+
+  </form>
+</div>
+
