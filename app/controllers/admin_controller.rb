@@ -1,14 +1,8 @@
 class AdminController < ApplicationController
+
   def index
   end
 
-  # def new
-  #   @account = Account.new
-  #   respond_to do |format|
-  #     format.html # new.html.erb
-  #     format.json { render json: @account }
-  #   end
-  # end
 
   # POST /accounts
   # POST /accounts.json
@@ -44,22 +38,22 @@ class AdminController < ApplicationController
 
   def list_users
     @accounts = Account.all
-
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @transactions }
+      format.html
+      format.json { render json: @accounts }
+      return
     end
 
   end
 
-  # GET /transactions/new
-  # GET /transactions/new.json
-  def new
-    @account = Transaction.new
+
+  def destroy
+    @account = Account.find(params[:id])
+    @account.destroy
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @account }
+      format.html { redirect_to admin_list_users_url }
+      format.json { head :no_content }
     end
   end
 end

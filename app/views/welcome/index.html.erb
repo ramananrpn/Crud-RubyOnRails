@@ -1,5 +1,12 @@
 
-<div class="container mt-5 " >
+<div class="container mt-5 text-center" >
+
+  <% flash.each do |key, value| %>
+    <div class="alert <%= bootstrap_class_for(key) %> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%=  value  %>
+    </div>
+  <% end %>
 
     <div class="text-center">
       <h1>Welcome !! </h1>
@@ -9,15 +16,15 @@
     <!--  Sign In Form -->
 
     <div class="container" style="width: 600px">
-      <form class="text-center border border-light p-5" action="#!">
+      <form class="text-center border border-light p-5" action="/sessions/create">
 
         <p class="h4 mb-4">Sign In</p>
 
         <!-- Account Number -->
-        <input type="text" id="accountNumber" class="form-control mb-4" placeholder="Account Number">
+        <input type="text" id="accountNumber" name="account_number" class="form-control mb-4" placeholder="Account Number">
 
         <!-- Email -->
-        <input type="password" id="password" class="form-control mb-4" placeholder="Password">
+        <input type="password" id="password" name="password" class="form-control mb-4" placeholder="Password">
 
         <!-- Sign in button -->
         <button class="btn btn-info btn-block" type="submit">Sign in</button>

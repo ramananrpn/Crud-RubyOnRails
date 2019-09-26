@@ -8,6 +8,6 @@ class CreateAccounts < ActiveRecord::Migration
       t.integer :balance
       t.timestamps
     end
-    # add_index : , :account_number ,:unique => true
+    add_index :accounts , :account_number ,:unique => true
   end
 end

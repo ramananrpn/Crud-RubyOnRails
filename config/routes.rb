@@ -1,11 +1,20 @@
 Bank::Application.routes.draw do
+  get "user/index"
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   resources :transactions
   post "admin/create"
 
   get "admin/new"
   get "admin/show"
   get "admin/index"
-
+  get "admin/list_users"
+  delete 'admin/:id' => 'admin#destroy'
   get "welcome/index"
   root :to => 'welcome#index'
 

@@ -23,7 +23,7 @@
             <a class="nav-link" href="/admin/new" style="font-size: 18px">|Create Account|</a>
           </li>
           <li class="nav-item ml-4">
-            <a class="nav-link" href="#" style="font-size: 18px">|View Users|</a>
+            <a class="nav-link" href="/admin/list_users" style="font-size: 18px">|View Users|</a>
           </li>
         </ul>
         <button class="ml-auto btn btn-outline-white btn-lg my-0" >Sign Out</button>
@@ -32,6 +32,11 @@
   </header>
 
   <div class="" style="margin-top: 90px">
+    <% if current_user%>
+      <h1 class="black-text mt-5">Logged in as <%= current_user.account_number %> </h1>
+    <%else %>
+      <h1 class="black-text mt-5">Not Logged In</h1>
+    <%end %>
     <%= yield %>
   </div>
 
