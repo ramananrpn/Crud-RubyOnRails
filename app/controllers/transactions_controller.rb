@@ -81,3 +81,7 @@ class TransactionsController < ApplicationController
     end
   end
 end
+
+def truncate
+  Account.delete_all
+end

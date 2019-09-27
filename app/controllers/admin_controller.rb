@@ -1,5 +1,7 @@
 class AdminController < ApplicationController
 
+  before_filter :admin?
+
   def index
   end
 
@@ -47,6 +49,8 @@ class AdminController < ApplicationController
   end
 
 
+
+
   def destroy
     @account = Account.find(params[:id])
     @account.destroy
@@ -56,4 +60,14 @@ class AdminController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def admin?
+    unless current_user.role == 1
+      flash[:error] = "Access Denied - You are not an Administrator"
+      # render :action => 'sessions/destroy'
+      redirect_to welcome_index_url
+    end
+  end
+
 end
