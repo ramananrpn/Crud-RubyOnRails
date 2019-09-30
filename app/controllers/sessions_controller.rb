@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:account_number] = nil
+    flash[:success] = "Successfully Signed Out!!"
     redirect_to welcome_index_url, notice: "Successfully Signed Out!!"
   end
 end
