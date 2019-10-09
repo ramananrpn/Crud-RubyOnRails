@@ -15,6 +15,7 @@ class AdminController < ApplicationController
     respond_to do |format|
 
       if @account.save
+        UserMailer.welcome_email(@account).deliver
         @details = @account
         puts "details : " + @details.account_number.to_s
         flash[:account_number] = "Account Number : " + (@account.account_number).to_s
@@ -66,7 +67,12 @@ class AdminController < ApplicationController
     unless current_user.role == 1
       flash[:error] = "Access Denied - You are not an Administrator"
       # render :action => 'sessions/destroy'
-      redirect_to welcome_index_url
+      if current_user
+        redirect_to user_index_url
+      else
+        redirect_to welcome_index_url
+      end
+
     end
   end
 

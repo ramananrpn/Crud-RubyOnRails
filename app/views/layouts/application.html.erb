@@ -7,11 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user%>
-  <h1 class="black-text mt-5">Logged in as <%= current_user.account_number %> </h1>
-<%else %>
-  <h1 class="black-text mt-5">Not Logged In</h1>
-<%end %>
+<%# if current_user%>
+<!--  <h1 class="black-text mt-5">Logged in as <%#= current_user.account_number %> </h1>-->
+<%#else %>
+<!--  <h1 class="black-text mt-5">Not Logged In</h1>-->
+<%#end %>
 <%= yield %>
 
 </body>

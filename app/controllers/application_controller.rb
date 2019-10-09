@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
       redirect_to welcome_index_path # halts request cycle
       return
     end
+
   end
 
   private
